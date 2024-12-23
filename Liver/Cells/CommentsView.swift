@@ -187,7 +187,7 @@ class CommentsView: UIView, UITableViewDataSource, UITableViewDelegate, GrowingT
     
     private func addGradientOverlay() {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.black.withAlphaComponent(0.7).cgColor, UIColor.clear.cgColor]
+        gradientLayer.colors = [UIColor.black.withAlphaComponent(1).cgColor, UIColor.clear.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 1)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.frame = commentsTableView.bounds

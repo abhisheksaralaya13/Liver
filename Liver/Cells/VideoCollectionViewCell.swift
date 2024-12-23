@@ -6,6 +6,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var userView: UIView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var viewersLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
@@ -19,8 +20,8 @@ class VideoCollectionViewCell: UICollectionViewCell {
     func configure(with videoData: VideoData) {
         self.commentsView.backgroundColor = .clear
         usernameLabel.text = videoData.username
-        viewersLabel.text = "\(videoData.viewers) viewers"
-        likesLabel.text = "\(videoData.likes) likes"
+        viewersLabel.text = "   👤 \(videoData.viewers)     "
+        likesLabel.text = "🤍 \(videoData.likes)"
 //        commentsView.
         
         if let url = URL(string: videoData.profilePicURL) {
@@ -53,6 +54,8 @@ class VideoCollectionViewCell: UICollectionViewCell {
         videoView.bringSubviewToFront(profileImageView)
         videoView.bringSubviewToFront(usernameLabel)
         videoView.bringSubviewToFront(likesLabel)
+        videoView.bringSubviewToFront(viewersLabel)
+        videoView.bringSubviewToFront(userView)
     }
     
     @objc private func loopVideo() {
